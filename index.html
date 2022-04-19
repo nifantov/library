@@ -9,27 +9,31 @@
     <script src="./script.js" defer></script>
 </head>
 <body>
-    <header></header>
+    <header><h1>My Library</h1>
+      <p>This is a project for <a href="www.theodinproject.com">The Odin Project</a> in which I have to make a library using Object Constructors and LocalStorage.</p> 
+        <p>You can also view the <a href="https://github.com/nifantov/library.git">Github repository</a> of this project.</p>
+    </header>
     <main class="main">
-        <button type="button" class="button" id="openForm">addBook</button>
+        <button type="button" class="button" id="openForm">+ add book</button>
         <div class="grid" id="grid"></div>
     </main>
     <footer></footer>
 
     <div class="popup" id="popup">
         <form class="popup-container">
-          <p>Add new book</p>
-          <label for="title">Title</label>
-          <input type="text" id="title" placeholder="Great Gastby" name="title"required>
-          <label for="author">Author</label>
-          <input type="text" id="author" placeholder="author" required>
-          <label for="pages">Pages</label>
-          <input type="text" id="pages" placeholder="pages" required>
-          <label for="readAsk">already read</label>
-          <input type="checkbox" id="readAsk" placeholder="readAsk" required>
+          <h2>Add new book</h2>
+          <label class="label" for="title">Title</label>
+          <input type="text" id="title" placeholder="Great Gastby" name="title" required maxlength="100">
+          <label class="label" for="author">Author</label>
+          <input type="text" id="author" placeholder="author" required maxlength="100">
+          <label class="label" for="pages">Pages</label>
+          <input type="text" id="pages" placeholder="pages" required max="10000">
+          <label class="label" for="readAsk">Have you read?</label>
+          <input type="checkbox" id="readAsk">
+        </form>
           <button class="button" type="button" id="addBook">Add new one</button>
           <button class="button" type="button" onclick="closeForm()">I changed my mind</button>
-        </form>
+        
       </div>
     
 </body>

@@ -25,7 +25,6 @@
 .grid {
     margin-top: var(--gap-xl);
     display: grid;
-    border: 2px solid rebeccapurple;
     width: 80vw;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: var(--gap-xl);
@@ -39,7 +38,8 @@
     padding: var(--gap-l);
    
     position: relative;
-    background-color: var(--white);
+    color: black;
+    border: 2px solid #555555; 
 }
 .card>p:first-child {
     margin-top: 10px;
@@ -51,9 +51,7 @@
     border-bottom: 2px solid black;
 }
 
-.read {
-    width: 70%;
-}
+
 
 .cross {
     border-radius: 50%;
@@ -64,7 +62,7 @@
     right: 5px;
     font-size: 20px;
     border: 0;
-    background-color: var(--white);
+    transition-duration: 0.4s;
 }
 
 .addBook {
@@ -72,19 +70,32 @@
 }
 
 header {
-    height: 60px;
-    background-color: black;
+    margin: 80px auto 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 80vw;    
+}
+h1 {
+    font-size: 48px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+header>p:hover {
+    transform: none;
+    cursor: default;
 }
 
 .popup {
     position: fixed;
-    width: 300px;
+    width: 400px;
     top:50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
     background-color: rgb(223, 223, 223);
     display: none;
     border: 3px solid #f1f1f1;
+    
   z-index: 9;
 }
 
@@ -93,17 +104,97 @@ header {
     flex-direction: column;
     align-items: center;
     gap:var(--gap-n);
-    padding: var(--gap-n)
+    padding: var(--gap-n);
+    transition-duration: 0.4s;
+    
 }
 
-.form-container input[type=text], .form-container input[type=password] {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    border: none;
-    background: #f1f1f1;
+form input[type=text] {
+    width: 80%;
+    padding: 12px 20px;
+    text-align: left;
+    box-sizing: border-box;
+    font-size: 18px;
+  }
+
+.popup>.button {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+  button {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555; 
+    padding: 12px 30px;
+    width: 70%;
+    transition-duration: 0.4s;
   }
 
   .button:hover {
-    opacity: 1;
+    background-color: #555555;
+    color: white;
   }
+
+  .noread {
+    color: #a8a8a8;
+    border: 2px solid #a8a8a8;
+  }
+
+  #openForm {
+      width: 80vw;
+      font-size: 36px;
+  }
+
+  .noread:hover {
+    color: black;
+    border: 2px solid #555555; 
+  }
+
+  .read:hover {
+    color: #a8a8a8;
+    border: 2px solid #a8a8a8;
+  }
+
+  .cross:hover {
+    color: #a8a8a8;
+    transform: translateY(-2px);
+  }
+
+  #openForm:hover, 
+  .noread:hover,
+  .read:hover, 
+  p:hover, 
+  form>input:hover {
+    transform: translateY(-2px);
+    cursor: pointer;
+  }
+
+  a {
+	position: relative;
+	color: #008321; 
+	cursor: pointer;
+	line-height: 1; 
+	text-decoration: none; 
+
+}
+a:after {
+	display: block;
+	position: absolute;
+	left: 0; 
+	width: 0;
+	height: 2px; 
+	background-color: #008321; 
+	content: "";
+	transition: width 0.3s ease-out; 
+    
+}
+
+a:hover:after,
+a:focus:after {
+	width: 100%; 
+}
